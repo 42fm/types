@@ -11,6 +11,7 @@ export interface Song {
 
 export interface CurrentSong extends Song {
   durationRemaining: number;
+  isPlaying: boolean;
 }
 
 export interface Channel {
@@ -50,7 +51,7 @@ export interface ServerToClientEvents {
 export interface ClientToServerEvents {
   joinRoom: ({ room }: { room: string }) => void;
   sync: ({ room }: { room: string }) => void;
-  // addSong: ({ url, room }: { url: string; room: string }) => void;
+  couldNotLoad: (room: string) => void;
 }
 
 export interface InterServerEvents {
