@@ -46,7 +46,7 @@ export interface ServerToClientEvents {
   clear: () => void;
   no42fm: () => void;
   yes42fm: () => void;
-  userCount: (count: number) => void;
+  userCount: (data: number) => void;
 }
 
 export interface ClientToServerEvents {
