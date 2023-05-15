@@ -1,4 +1,4 @@
-export interface Song {
+interface Song {
   id?: string;
   username?: string;
   yt_id?: string;
@@ -9,21 +9,21 @@ export interface Song {
   duration: number;
 }
 
-export interface CurrentSong extends Song {
+interface CurrentSong extends Song {
   durationRemaining: number;
   isPlaying: boolean;
 }
 
-export interface Channel {
+interface Channel {
   current: CurrentSong;
   list: Song[];
 }
 
-export interface IChannels {
+interface IChannels {
   [key: string]: Channel;
 }
 
-export type Skip = SkipWithPlaylist | SkipWithNoPlaylist;
+type Skip = SkipWithPlaylist | SkipWithNoPlaylist;
 
 interface SkipWithPlaylist {
   type: "playlist";
@@ -34,7 +34,7 @@ interface SkipWithNoPlaylist {
   type: "noplaylist";
 }
 
-export interface ServerToClientEvents {
+interface ServerToClientEvents {
   song: (data: Channel) => void;
   songUpdate: (data: Channel) => void;
   songSync: (data: number) => void;
@@ -49,14 +49,14 @@ export interface ServerToClientEvents {
   userCount: (data: number) => void;
 }
 
-export interface ClientToServerEvents {
+interface ClientToServerEvents {
   joinRoom: ({ room }: { room: string }) => void;
   sync: ({ room }: { room: string }) => void;
   couldNotLoad: (room: string) => void;
 }
 
-export interface InterServerEvents {
+interface InterServerEvents {
   ping: () => void;
 }
 
-export interface SocketData {}
+interface SocketData {}
