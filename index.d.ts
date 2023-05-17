@@ -1,8 +1,8 @@
 interface Song {
   id?: string;
-  username?: string;
-  yt_id?: string;
-  title?: string;
+  username: string;
+  yt_id: string;
+  title: string;
   url: string;
   artist?: string;
   imgUrl?: string;
