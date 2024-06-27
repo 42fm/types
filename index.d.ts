@@ -35,8 +35,8 @@ interface SkipWithNoPlaylist {
 }
 
 interface ServerToClientEvents {
-  song: (data: Channel) => void;
-  songUpdate: (data: Channel) => void;
+  songAdd: (data: Channel) => void;
+  songRemove: (data: Channel) => void;
   songSync: (data: number) => void;
   playlistUpdate: (data: Channel) => void;
   playlistAdd: (data: Song) => void;
