@@ -50,6 +50,7 @@ interface ServerToClientEvents {
 }
 
 interface ClientToServerEvents {
+  leaveRoom: ({ room }: { room: string }) => void;
   joinRoom: ({ room }: { room: string }) => void;
   sync: ({ room }: { room: string }) => void;
   couldNotLoad: (room: string) => void;
